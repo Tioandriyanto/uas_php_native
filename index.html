@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Sekolah - Semarang</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <img src="asset\LOGO GIS KOTA SEMARANG.png" alt="Logo Kota Semarang" class="logo" style="width: 150px; height: auto;">
+            <div class="hamburger" id="hamburgerBtn">
+                &#9776;
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="panduan.html">Panduan</a></li>
+                <li><a href="kontak.html">Hubungi Kami</a></li>
+                <li><a href="admin/login.php" class="btn-login">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <h1>Daftar Sekolah Kota Semarang</h1>
+        <p>Menampilkan informasi sekolah beserta jarak dari lokasi Anda.</p>
+    </div>
+
+    <div class="container">
+        <div class="search-wrapper" style="margin-left: auto;">
+            <label for="searchInput" class="search-label">Cari:</label>
+            <input type="text" id="searchInput" placeholder="Masukkan nama sekolah..." onkeyup="searchSchool()" />
+        </div>
+    
+        <!-- Filter jumlah entri -->
+        <div class="filter-wrapper">
+            <label for="entries">Show:</label>
+            <select id="entries">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>       
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Sekolah</th>
+                    <th>Telepon</th>
+                    <th>Tautan Map</th>
+                    <th>Jarak</th>
+                    <th>Foto</th>
+                </tr>
+            </thead>
+            <tbody id="schoolData">
+                <!-- Data sekolah akan diisi oleh main.js -->
+            </tbody>
+        </table>
+
+        <p id="entriesInfo">Showing 0 to 0 of 0 entries</p>
+        
+        <div id="pagination" class="pagination-wrapper">
+        </div>   
+    </div>
+    
+
+    <script src="main.js"></script>
+</body>
+</html>
