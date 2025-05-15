@@ -2,19 +2,19 @@
 require_once '../layout/_top.php';
 require_once '../helper/connection.php';
 
-$id = $_GET['?'] ?? null;
+$id = $_GET['id'] ?? null;
 
-if (!$?) {
-    echo "ID Sekolah tidak ditemukan!";
-    exit;
+if (!$id) {
+  echo "ID Sekolah tidak ditemukan!";
+  exit;
 }
 
-$query = mysqli_query($connection, "SELECT * FROM ? WHERE ? = '$?'");
+$query = mysqli_query($connection, "SELECT * FROM sekolah WHERE id = '$id'");
 $sekolah = mysqli_fetch_assoc($query);
 
-if (!$?) {
-    echo "Data sekolah tidak ditemukan!";
-    exit;
+if (!$sekolah) {
+  echo "Data sekolah tidak ditemukan!";
+  exit;
 }
 ?>
 

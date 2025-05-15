@@ -7,24 +7,24 @@ if (isset($_POST['submit'])) {
   $password = $_POST['password'];
 
   // TODO: Lengkapi query cek user
-  $sqlUser = "SELECT * FROM users WHERE username = '$input' LIMIT 1"; // <-- fill this section
+  $sqlUser = "SELECT * FROM tb_user WHERE username = '$input' LIMIT 1"; // <-- fill this section
   $resultUser = mysqli_query($connection, $sqlUser);
   $rowUser = mysqli_fetch_assoc($resultUser);
 
   // TODO: Cek login berhasil atau tidak
   // Validasi login // <-- fill this section
-  if (password_verify($password, $rowUser['password'])) {
+  if ($password === $rowUser['password']) {
+
     // Jika berhasil, simpan data user ke session
     $_SESSION['login'] = [
-      'id' => $rowUser['id'],
+      'id' => $rowUser['id_user'],
       'username' => $rowUser['username'],
       'level' => $rowUser['level']
     ];
     header('Location: dashboard/index.php');
     exit;
   } else {
-    // Jika gagal, redirect ke halaman login dengan pesan error
-    header('Location: login.php?error=1');
+    header('Location: login.php?error=1'); // Redirect jika gagal
     exit;
   }
 }

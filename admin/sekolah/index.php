@@ -4,7 +4,11 @@ require_once '../layout/_top.php';
 require_once '../helper/connection.php';
 
 // Ambil data dari tabel sekolah
-$result = mysqli_query($connection, "SELECT * FROM ?"); // <-- fill this section
+$result = mysqli_query($connection, "SELECT * FROM sekolah"); // <-- fill this section
+
+if (!$result) {
+  die("Query error: " . mysqli_error($connection));
+}
 ?>
 
 <section class="section">
@@ -32,7 +36,8 @@ $result = mysqli_query($connection, "SELECT * FROM ?"); // <-- fill this section
               <tbody>
                 <?php
                 $no = 1;
-                while ($data = mysqli_fetch_array($result)) :
+                while ($data = mysqli_fetch_assoc($result)) :
+
                 ?>
                   <tr>
                     <td><?= $no++ ?></td>

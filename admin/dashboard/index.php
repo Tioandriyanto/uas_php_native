@@ -1,4 +1,13 @@
 <?php
+
+session_start(); // Wajib untuk menggunakan $_SESSION
+
+// Cek apakah user sudah login
+if (!isset($_SESSION['login']) || $_SESSION['login']['level'] != 'admin') {
+  header('Location: ../login.php');
+  exit;
+}
+
 require_once '../layout/_top.php';
 require_once '../helper/connection.php';
 
@@ -51,7 +60,6 @@ $total_smp = mysqli_fetch_array($query_smp)[0];
   </div>
 </section>
 
-<?php 
+<?php
 require_once '../layout/_bottom.php';
 ?>
-
