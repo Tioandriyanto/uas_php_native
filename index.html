@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Sekolah - Semarang</title>
+    <title>Marview Cafetaria - Menu</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <img src="asset\LOGO GIS KOTA SEMARANG.png" alt="Logo Kota Semarang" class="logo" style="width: 150px; height: auto;">
+            <img src="asset/LOGO GIS KOTA SEMARANG.png" alt="Logo Marview Cafetaria" class="logo" style="width: 150px; height: auto;">
             <div class="hamburger" id="hamburgerBtn">
                 &#9776;
             </div>
@@ -23,14 +23,14 @@
     </nav>
 
     <div class="jumbotron">
-        <h1>Daftar Sekolah Kota Semarang</h1>
-        <p>Menampilkan informasi sekolah beserta jarak dari lokasi Anda.</p>
+        <h1>Marview Cafetaria</h1>
+        <p>Pesan makanan dan minuman favorit Anda di sini.</p>
     </div>
 
     <div class="container">
         <div class="search-wrapper" style="margin-left: auto;">
             <label for="searchInput" class="search-label">Cari:</label>
-            <input type="text" id="searchInput" placeholder="Masukkan nama sekolah..." onkeyup="searchSchool()" />
+            <input type="text" id="searchInput" placeholder="Masukkan nama menu..." onkeyup="searchMenu()" />
         </div>
     
         <!-- Filter jumlah entri -->
@@ -48,15 +48,16 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama Sekolah</th>
-                    <th>Telepon</th>
-                    <th>Tautan Map</th>
-                    <th>Jarak</th>
+                    <th>Nama Menu</th>
+                    <th>Kategori</th>
+                    <th>Harga</th>
+                    <th>Deskripsi</th>
                     <th>Foto</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
-            <tbody id="schoolData">
-                <!-- Data sekolah akan diisi oleh main.js -->
+            <tbody id="menuData">
+                <!-- Data menu akan diisi oleh main.js -->
             </tbody>
         </table>
 
@@ -66,7 +67,6 @@
         </div>   
     </div>
     
-
     <script src="main.js"></script>
 </body>
 </html>

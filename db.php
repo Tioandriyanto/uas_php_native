@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "sekolah_db";// <-- fill this section
+$db   = "dbmarview"; // <-- updated database name
 
 $conn = mysqli_connect($host, $user, $pass, $db); // <-- fill this section
 

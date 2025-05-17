@@ -8,19 +8,19 @@ $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10; // <-- fill this sect
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $offset = ($page - 1) * $limit;
 
-$sql = "SELECT id, nama_sekolah, telepon, latitude, longitude, foto FROM sekolah"; // <-- fill this section
+$sql = "SELECT id_menu, nama_menu, harga, kategori, deskripsi, gambar FROM menu"; // <-- updated query
 $result = mysqli_query($conn, $sql);
 
 $data = array();
 while ($row = mysqli_fetch_assoc($result)) {
-    if (!empty($row['foto'])) {
-        if (strpos($row['foto'], 'uploads/') === 0) {
-            $row['foto'] = $base_url . $row['foto'];
+    if (!empty($row['gambar'])) {
+        if (strpos($row['gambar'], 'uploads/') === 0) {
+            $row['gambar'] = $base_url . $row['gambar'];
         } else {
-            $row['foto'] = $base_url . "uploads/" . $row['foto'];
+            $row['gambar'] = $base_url . "uploads/" . $row['gambar'];
         }
     } else {
-        $row['foto'] = null;
+        $row['gambar'] = null;
     }
     $data[] = $row;
 }
