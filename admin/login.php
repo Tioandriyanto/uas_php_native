@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
   $password = $_POST['password'];
 
   //query cek user
-  $sqlUser = "SELECT * FROM tb_user WHERE username = '$input' LIMIT 1"; // <-- fill this section
+  $sqlUser = "SELECT * FROM user WHERE username = '$input' LIMIT 1"; // <-- fill this section
   $resultUser = mysqli_query($connection, $sqlUser);
   $rowUser = mysqli_fetch_assoc($resultUser);
 
