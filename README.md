@@ -1,4 +1,4 @@
-# UAS PHP Native 
+# UAS PHP Native
 
 Repositori ini merupakan hasil dari Ujian Akhir Semester (UAS) mata kuliah Pemrograman Web. Aplikasi ini dibuat menggunakan **PHP Native** tanpa framework dan berfungsi sebagai sistem manajemen data sederhana.
 
